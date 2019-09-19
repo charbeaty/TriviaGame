@@ -34,17 +34,14 @@ let rightAnswer = 0;
 let wrongAnswer = 0;
 let timer;
 
-//put next question: currentQuestion++
+//load game
 $("#start").click(function () {
-    //$('#start').hide();
-    //resetGame();
     startGame(currentQuestion);
-    //countDown();
     console.log(currentQuestion);
 })
 
+//resets game
 function resetGame() {
-    // clearScreen();
     gameTimer = 10;
     currentQuestion = 0; //pull first question from array
     rightAnswer = 0;
@@ -81,33 +78,43 @@ function startGame() {
 
     let question = triviaQuestions[currentQuestion].question;
     let choices = triviaQuestions[currentQuestion].choices;
+    let correctChoice = triviaQuestions[currentQuestion].answer;
+
+
 
     $("#time").html("Time Remaining: " + gameTimer);
     $("#trivia").html("<h4>" + question + "</h4>");
+    //$("#results").html("<h4>" + correctChoice + "</h4>");
     loadChoices(choices);
 
-};
 
 
 
-
-//startGame();
-
-function loadChoices(choices) {
+   function loadChoices(choices) {
     let result = '';
 
     for (let i = 0; i < choices.length; i++) {
-        result += $("#trivia").append("<p>" + choices[i] + "</p>");
-        $("p").addClass("options");
+        var answerDiv = $("<div>");
+        var choicesButtons = $("<button>");
+        choicesButtons.attr('data-value', choices[i]);
+        choicesButtons.text(choices[i]);
+        choicesButtons.addClass("options");
+
+        answerDiv.append(choicesButtons);
+        $("#results").append(answerDiv);
+        // result += $("#trivia").append("<p>" + choices[i] + "</p>");
+        // $("p").addClass("options");
 
 
     }
     return result;
 }
 
-$(document).on('click', ".options", function () {
-    console.log();
+$(document).on('click', "#options", function () {
+    console.log('.options');
 })
+
+};
 
 //startGame();
 
