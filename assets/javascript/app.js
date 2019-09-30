@@ -136,7 +136,7 @@ function questionTimer () {
 }
 function decrement(){
     gameTimer--;
-    $('#time').text(gameTimer)
+    $('#time').text('Time Remaining: ' + gameTimer)
 
     if (gameTimer === 0) {
         timesUp();

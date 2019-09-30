@@ -1,0 +1,53 @@
+body {
+    background-color: black;    
+}
+
+.jumbotron {
+    background-color: black;
+    
+}
+
+h1 {
+    
+    color: fuchsia;
+    font-family: 'Vibes', cursive;
+    font-size: 85px;
+}
+p {
+    font-family: 'Vibes', cursive;
+    color: white;
+    font-size: 32px;
+
+}
+
+h2 {
+    color: white;
+    font-family: 'Notable', sans-serif; ;
+}
+
+#start, 
+.chooseAnswer {
+    color: black;
+    font-family:'Vibes', cursive;
+    background-color: greenyellow;
+    font-size: 32px;
+}
+
+#time {
+    color: coral;
+    font-family: 'Vibes', cursive;
+    font-size: 40px;
+}
+
+#question {
+    color: turquoise;
+    font-family: 'Notable', sans-serif;
+    font-size: 32px;
+}
+
+#results{
+    color: yellow;
+    font-family: 'Vibes', cursive;
+    font-size: 32px;
+}
+
